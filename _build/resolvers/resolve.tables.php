@@ -6,12 +6,12 @@ if ($object->xpdo) {
 
 	switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 		case xPDOTransport::ACTION_INSTALL:
-			$modelPath = $modx->getOption('modextra_core_path', null, $modx->getOption('core_path') . 'components/modextra/') . 'model/';
-			$modx->addPackage('modextra', $modelPath);
+			$modelPath = $modx->getOption('modStore_core_path', null, $modx->getOption('core_path') . 'components/modStore/') . 'model/';
+			$modx->addPackage('modStore', $modelPath);
 
 			$manager = $modx->getManager();
 			$objects = array(
-				'modExtraItem',
+				'modStoreItem',
 			);
 			foreach ($objects as $tmp) {
 				$manager->createObjectContainer($tmp);
